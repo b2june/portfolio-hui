@@ -1,0 +1,395 @@
+@charset "utf-8";
+/* ==================
+common
+================== */
+:root {
+    --primary-white: #FFFFFF;
+    --primary-black: #333333;
+    --primary-Gray: #747D8C;
+    --primary-lightGray: #F3F3F3;
+    --primary-blue: #A2B7C3;
+    --contentWidth: 89.8%;
+    --contentPadding: 5%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family:
+    "Noto Sans JP", serif;
+    font-style: normal;
+    font-size: 1.6rem;
+    color: var(--primary-black, #333333);
+    line-height: 2rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.topic {
+    font-family:
+    "Radio Canada", serif;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--primary-Gray, #747D8C);
+    text-align: center;
+    font-size: 3.2rem;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+@media screen and (min-width:769px) {
+    body {
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+        margin-top: 80px;
+    }
+
+    .topic {
+        font-size: 4.0rem;
+    }
+}
+
+/* Header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: var(--primary-white);
+    width: 100%;
+}
+
+.header__logo {
+    width: 50px;
+    height: 50px;
+}
+
+.list__logo {
+    display: none;
+}
+
+.nav__list {
+    margin: 0 16px;
+}
+
+.nav__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__item {
+    margin: 24px 0;
+    font-size: 2.0rem;
+    font-family:
+    "Radio Canada", serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.nav__close {
+    width: 24px;
+    height: 24px;
+    margin: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__topic {
+    width: 46px;
+    height: 46px;
+    margin: 8px;
+}
+
+.insta-logo {
+    width: 32px;
+    height: 32px;
+}
+
+.header__menubtn {
+    color: var(--primary-white);
+    background-color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 1.2rem;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .nav 初期表示 */
+.nav {
+    background-color: var(--primary-white);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transform: translateX(-100%);
+    transition: transform 0.4s;
+}
+
+/* .nav.active 表示 */
+.nav.active {
+    transform: translateX(0);
+}
+
+/*  Main visual */
+
+.slick__item img{
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* .slick__item:first-of-type {
+    margin-top: 80px;
+} */
+
+
+/* header pc */
+@media screen and (min-width:769px) {
+    .nav__header {
+        display: none;
+    }
+
+    .header__logo {
+        display: none;
+    }
+
+    .list__logo {
+        display: flex;
+        width: 50px;
+        height: 50px;
+    }
+
+    .pc__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav {
+        background-color: var(--primary-white);
+        height: auto;
+        width: 100%;
+        position: fixed;
+        padding: 16px 5.3%;
+        margin: auto 0;
+        transform: translateX(0%);
+        top: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav__list {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
+        margin: 0;
+    }
+
+    .nav__item {
+        font-size: 1.8rem;
+        padding: 0;
+        margin: 0;
+        margin-right: 40px;
+        align-items: center;
+        border-bottom: none;
+    }
+
+    .header__menubtn {
+        display: none;
+    }
+}
+
+/* pc 769px */
+
+/* Gallery */
+
+.category {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.category__name {
+    margin-top: 20px;
+}
+
+.category__link:hover {
+    text-decoration: underline;
+}
+
+.subtitle {
+    margin-top: 56px;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 2.0rem;
+    color: var(--primary-blue, #A2B7C3);
+}
+
+.photo__container {
+    margin: 32px 0 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    padding: 0 10px;
+}
+
+.photo__item img {
+    width: 376px;
+    height: 270px;
+    object-fit: cover;
+}
+
+@media screen and (min-width:769px) {
+    .subtitle {
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 2.4rem;
+        color: var(--primary-blue, #A2B7C3);
+    }
+
+    .photo__container {
+        margin: 40px 0 60px;
+        gap: 48px;
+    }
+
+    .photo__item img {
+        width: 557px;
+        height: 400px;
+    }
+}
+/* pc 769px */
+
+/* Contact */
+#contact {
+    padding: 60px 0;
+    background-color: var(--primary-lightGray);
+    position: relative;
+}
+
+#contact .topic {
+    color: var(--primary-blue);
+}
+
+.thanks_txt1 {
+    position: absolute;
+    font-family:
+    "Radio Canada", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: #DCDCDC;
+    top: -8px;
+    left: 10px;
+}
+
+.contact__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 40px;
+    margin: 32px 10px;
+    width: auto;
+    border-radius: 40px;
+    background-color: var(--primary-white);
+    border: 1px solid var(--primary-black);
+    transition: 0.4s;
+}
+
+.contact__btn:hover {
+    background-color: var(--primary-blue);
+    letter-spacing: 0.15em;
+}
+
+.contact__txt {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.contact__icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.contactbtn__txt {
+    font-family:
+    "Radio Canada", serif;
+    font-style: normal;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.thanks_txt2 {
+    position: absolute;
+    font-family:
+    "Radio Canada", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: #DCDCDC;
+    bottom: -8px;
+    right: 10px;
+}
+
+/* Contact pc */
+@media screen and (min-width:769px) {
+    #contact {
+        padding: 80px 0;
+    }
+
+    .thanks_txt1 {
+        font-size: 3.2rem;
+    }
+
+    .contact__btn {
+        margin: 32px auto 0;
+        width: 400px;
+    }
+
+    .thanks_txt2 {
+        font-size: 3.2rem;
+    }
+}
+/* pc 769px */
+
+/* Footer */
+.footer {
+    padding: 60px 0;
+    text-align: center;
+}
+.header-logo {
+    width: 80px;
+    height: 80px;
+}
+
+.footer__nav__item {
+    margin-top: 24px;
+}
+
+.footer__instalogo {
+    width: 32px;
+    height: 32px;
+}
+
+.copy {
+    margin: 8px 0;
+    text-align: center;
+}
